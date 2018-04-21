@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace STU.LUIS
 {
-    public interface ILanguageProccessingService
+    public interface ILanguageProcessingService
     {
         Task<Result<QueryResult>> ProcessQueryAsync(string query);
     }

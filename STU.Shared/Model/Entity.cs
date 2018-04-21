@@ -9,9 +9,7 @@ namespace STU.Shared.Model
 {
     public class Entity
     {
-        [JsonProperty(PropertyName = "Entity")]
         public String Name { get; set; }
         public String Type { get; set; }
-        public double Score { get; set; }
     }
 }

@@ -10,9 +10,9 @@ namespace STU.LUIS.Tests
         [TestMethod]
         public void TestBuildingLocation()
         {
-            ILanguageProccessingService service = new LUISProcessingService();
+            ILanguageProcessingService service = new LUISProcessingService();
 
-            service.ProcessQueryAsync("Where is the peter johnson building");
+            service.ProcessQueryAsync("Where is the peter johnson building?");
         }
     }
 }

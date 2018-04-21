@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STU.Shared.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,5 +16,10 @@ namespace STU.LUIS.Model
         public int EndIndex { get; set; }
 
         public List<string> Values { get; set; }
+
+        public Entity ToEntity()
+        {
+            return new Entity { Name = Entity, Type = Type };
+        }
     }
 }

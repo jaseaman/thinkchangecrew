@@ -13,7 +13,7 @@ using STU.Shared.Model;
 
 namespace STU.LUIS
 {
-    public class LUISProcessingService : ILanguageProccessingService
+    public class LUISProcessingService : ILanguageProcessingService
     {
         public static string LUISEndpoint = "https://australiaeast.api.cognitive.microsoft.com";
         public static string ApiPath = "/luis/v2.0/apps/";
@@ -32,7 +32,7 @@ namespace STU.LUIS
 
             IRestResponse<LUISQueryResult> result = client.Execute<LUISQueryResult>(request);
 
-            return new Result<QueryResult> { };
+            return new Result<QueryResult> { Success = true, Data = result.Data.ToQueryResult() };
         }
     }
 }
