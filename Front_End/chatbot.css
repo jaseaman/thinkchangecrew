@@ -21,7 +21,7 @@ body {
 
 /* ---------- GENERAL STYLE---------- */
 
-.chat-box-welcome__company-name,
+.chat-box-welcome__bot-name,
 .chat-box__sign {
     font-family: 'Roboto', 'Helvetica Neue', "Arial", sans-serif;
     position: relative;
