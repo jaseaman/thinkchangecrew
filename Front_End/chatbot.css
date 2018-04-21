@@ -1,6 +1,6 @@
 @charset "utf-8";
 
-/* ---------- GENERAL ---------- */
+
 
 html,
 body {
@@ -19,7 +19,7 @@ body {
 }
 
 
-/* ---------- GENERAL STYLE---------- */
+
 
 .chat-box-welcome__bot-name,
 .chat-box__sign {
@@ -63,7 +63,7 @@ body {
 }
 
 
-/* ---------- chat-bot-button to open chat---------- */
+
 
 .chat-circle {
     position: fixed;
@@ -298,9 +298,9 @@ body {
 }
 
 .chat-bot {
-    background: white;
+    background: rgba(235, 235, 235, 0.99);
     padding: 10px 15px 10px 15px;
-    color: #666;
+    color: black;
     max-width: 75%;
     float: left;
     margin-left: 10px;

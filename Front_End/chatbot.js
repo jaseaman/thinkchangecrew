@@ -7,6 +7,8 @@ $(function () {
     
     /*Animations from click events*/
 
+    
+
     $(".chat-circle").click(function () {
         $(".chat-circle").hide('scale');
         $(".chat-box").show('scale');
