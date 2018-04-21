@@ -33,7 +33,8 @@ namespace STU.Bot.Dialogs
         domain: ConfigurationManager.AppSettings["LuisAPIHostName"])))
         { }
         
-        [LuisIntent("ThanksSTU"), LuisIntent("CensusDate"), LuisIntent("Coffee"), LuisIntent("IntroduceSTU"), LuisIntent("Help"), LuisIntent("HowIsSTU"), LuisIntent("Joke")]
+        [LuisIntent("ThanksSTU"), LuisIntent("CensusDate"), LuisIntent("Coffee"), LuisIntent("IntroduceSTU"), LuisIntent("Help"), LuisIntent("HowIsSTU"), LuisIntent("Joke"),
+            LuisIntent("Timetable"), LuisIntent("ChangeSubjects")]
         public async Task StringResponse(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
             string message = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
