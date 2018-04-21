@@ -26,22 +26,13 @@ namespace STU.Bot.Dialogs
         protected static IResponseService _responseService = new ResponseService(new MongoDbRepository<STUResponse>(client, "STU"));
         protected static ILocationService _locationService = new LocationService(new MongoDbRepository<Location>(client, "STU"));
         
-        //public Task StartAsync(IDialogContext context)
-        //{
-        //    context.Wait(UserQueryRecievedAsync);
-
-        //    return Task.CompletedTask;
-        //}
-
         public LUISResponseDialog() : base(new LuisService(new LuisModelAttribute(
         ConfigurationManager.AppSettings["LuisAppId"],
         ConfigurationManager.AppSettings["LuisAPIKey"],
         domain: ConfigurationManager.AppSettings["LuisAPIHostName"])))
         { }
-
-        [LuisIntent("HowIsSTU")]
-        [LuisIntent("Help")]
-        [LuisIntent("IntroduceSTU")]
+        
+        [LuisIntent("ThanksSTU"), LuisIntent("CensusDate"), LuisIntent("Coffee"), LuisIntent("IntroduceSTU"), LuisIntent("Help"), LuisIntent("HowIsSTU")]
         public async Task StringResponse(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
             string message = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
@@ -71,8 +62,7 @@ namespace STU.Bot.Dialogs
             }
         }
 
-        [LuisIntent("")]
-        [LuisIntent("None")]
+        [LuisIntent("None"), LuisIntent("")]
         public async Task ProvideApologies(IDialogContext context, LuisResult result)
         {
             await context.PostAsync(string.Format("I'm sorry, I could not process : '{0}'", result.Query));
