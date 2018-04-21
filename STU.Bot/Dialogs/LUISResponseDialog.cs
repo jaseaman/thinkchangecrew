@@ -25,7 +25,7 @@ namespace STU.Bot.Dialogs
 
         protected static IResponseService _responseService = new ResponseService(new MongoDbRepository<STUResponse>(client, "STU"));
         protected static ILocationService _locationService = new LocationService(new MongoDbRepository<Location>(client, "STU"));
-        protected static ICourseInfoService _courseInfoService = new CourseInfoService(new MongoDbRepository<CourseInfo>(client, "STU"));
+        protected static ICourseInfoService _courseInfoService = new CourseInfoService(new MongoDbRepository<Course>(client, "STU"));
         
         public LUISResponseDialog() : base(new LuisService(new LuisModelAttribute(
         ConfigurationManager.AppSettings["LuisAppId"],
@@ -74,10 +74,9 @@ namespace STU.Bot.Dialogs
                     await context.PostAsync("I'm sorry, I was unable to find that course or it's info");
                     return;
                 }
-                string response = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
-                CourseInfo courseInfo = _courseInfoService.RetrieveCourseInfo(normalizedCourseId).Data;
+                Course courseInfo = _courseInfoService.RetrieveCourseInfo(normalizedCourseId).Data;
 
-                await context.PostAsync(string.Format(response, courseInfo.Course, courseInfo.CourseID, courseInfo.Brief, courseInfo.RequiredATAR));
+                await context.PostAsync(string.Format("{0} - {1} \n\n {2} \n\n Atar : {3}", courseInfo.CourseTitle, courseInfo.CourseID, courseInfo.Brief, courseInfo.RequiredATAR));
                 return;
             }
             catch

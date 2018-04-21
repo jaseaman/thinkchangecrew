@@ -10,6 +10,6 @@ namespace STU.Shared.Services
 {
     public interface ICourseInfoService
     {
-        Result<CourseInfo> RetrieveCourseInfo(string courseId);
+        Result<Course> RetrieveCourseInfo(string courseId);
     }
 }

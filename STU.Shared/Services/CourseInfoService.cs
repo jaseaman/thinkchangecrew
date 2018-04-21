@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 
 namespace STU.Shared.Services
 {
-    public class CourseInfoService : BaseService<CourseInfo>, ICourseInfoService
+    public class CourseInfoService : BaseService<Course>, ICourseInfoService
     {
-        public CourseInfoService(IRepository<CourseInfo> courseRepository) : base(courseRepository) { }
+        public CourseInfoService(IRepository<Course> courseRepository) : base(courseRepository) { }
 
-        public Result<CourseInfo> RetrieveCourseInfo(string courseId)
+        public Result<Course> RetrieveCourseInfo(string courseId)
         {
-            throw new NotImplementedException();
+            return new Result<Course> { Success = true, Data = Repository.All(c => c.CourseID == courseId).FirstOrDefault() };
         }
     }
 }
