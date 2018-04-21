@@ -6,12 +6,12 @@ namespace STU.Common.Result
 {
     public class Result
     {
-        bool Success { get; set; }
-        string Message { get; set; }
+        public bool Success { get; set; }
+        public string Message { get; set; }
     }
 
     public class Result<T> : Result
     {
-        T Data { get; set; }
+        public T Data { get; set; }
     }
 }
