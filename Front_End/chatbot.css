@@ -25,6 +25,8 @@ body {
 .chat-box__sign {
     font-family: 'Roboto', 'Helvetica Neue', "Arial", sans-serif;
     position: relative;
+    font-weight: 900;
+    color:white;
 }
 
 
@@ -196,6 +198,7 @@ body {
     padding-left: 10px;
     font-size: 20px;
     padding-top: 13px;
+    font-weight: 900;
 }
 
 .chat-box-body {
