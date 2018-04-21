@@ -60,7 +60,9 @@
     <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\IBookingService.cs" />
     <Compile Include="Services\ILanguageProcessingService.cs" />
+    <Compile Include="Services\ILocationService.cs" />
     <Compile Include="Services\IResponseService.cs" />
+    <Compile Include="Services\LocationService.cs" />
     <Compile Include="Services\ResponseService.cs" />
   </ItemGroup>
   <ItemGroup>
