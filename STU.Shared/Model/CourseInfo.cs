@@ -8,7 +8,7 @@ namespace STU.Shared.Model
 {
     public class CourseInfo : BaseModel
     {
-        public string CourseId { get; set; }
+        public string CourseID { get; set; }
         public string Course { get; set; }
         public string Brief { get; set; }
         public float RequiredATAR { get; set; }
