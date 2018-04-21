@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace STU.Common.Repository
+namespace STU.Shared.Repository
 {
     public interface IRepository<T> where T : BaseModel
     {

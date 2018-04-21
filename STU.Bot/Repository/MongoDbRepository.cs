@@ -1,6 +1,6 @@
 ﻿using MongoDB.Driver;
-using STU.Common.Repository;
 using STU.Shared.Model;
+using STU.Shared.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
