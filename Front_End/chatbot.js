@@ -29,20 +29,36 @@ $(function () {
     $(".chat-input__text").keypress(function(event) { // Send message to the chat bot
         //  &&  document.getElementById(".chat-input__text").value != "" use for null
         if (event.which == 13) {
-            // Send the request 
+            
             event.preventDefault();
             var userMessage = $(".chat-input__text").val();
 
             var prevState =  $(".chat-logs").html();
 
             
-            $(".chat-logs").html(prevState + "<br>" + "<div class=\"cm-msg-text\">" + userMessage + "</div>");
+            $(".chat-logs").html(prevState + "<br>" + "<div class=\"chat-user\">" + userMessage + "</div>");
 
+            // Send the request to server
+            // Server returns the response, and is passed into robot message
+            // Below the bot message passes in a placeholder
             
-            
+
+        
             $(".chat-input__text").val("");
+
+            setTimeout(function() {
+                var prevState = $(".chat-logs").html();
+                var placeholder = "Oi, I'm a placeholder";
+
+                $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU icon.png\"/><div class=\"chat-bot\">" + placeholder + "</div></div>");
+            }, 750);
+           
+
+
 
         } 
     }) 
+
+    
 
 })
