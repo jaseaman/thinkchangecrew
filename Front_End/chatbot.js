@@ -30,29 +30,33 @@ $(function () {
     
     $(".chat-input__text").keypress(function(event) { // Send message to the chat bot
         //  &&  document.getElementById(".chat-input__text").value != "" use for null
-        if (event.which == 13) {
-            
+        if (event.which == 13) { 
             event.preventDefault();
             var userMessage = $(".chat-input__text").val();
-
             var prevState =  $(".chat-logs").html();
-
-            
             $(".chat-logs").html(prevState + "<br>" + "<div class=\"chat-user\">" + userMessage + "</div>");
+            $(".chat-input__text").val("");
+
 
             // Send the request to server
             // Server returns the response, and is passed into robot message
             // Below the bot message passes in a placeholder
-            
-
-        
-            $(".chat-input__text").val("");
+            // Needs to input content and it's content type
 
             setTimeout(function() {
                 var prevState = $(".chat-logs").html();
-                var placeholder = "Oi, I'm a placeholder";
+                var content = "Oi, I'm a placeholder";
+                //var content = "maxresdefault.jpg";
+                var contentType = "string"
+                if (contentType == "string") {
+                    $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU icon.png\"/><div class=\"chat-bot\">" + content + "</div></div>");
 
-                $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU icon.png\"/><div class=\"chat-bot\">" + placeholder + "</div></div>");
+                } else {
+                    $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU icon.png\"/><div class=\"chat-bot\">" + "<image class=\"img\" src=\"" + content + "\"/>" + "</div></div>");
+
+                }
+                
+                //$(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU icon.png\"/><div class=\"chat-bot\">" + placeholder + "</div></div>");
             }, 750);
            
 
