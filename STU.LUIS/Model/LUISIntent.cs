@@ -9,6 +9,6 @@ namespace STU.LUIS.Model
     public class LUISIntent
     {
         public string Intent { get; set; }
-        public double Score { get; set; }
+        public float Score { get; set; }
     }
 }

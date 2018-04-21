@@ -8,6 +8,10 @@ namespace STU.LUIS.Model
 {
     public class LUISQueryResult
     {
+        public string Query { get; set; }
+
+        public LUISIntent TopScoringIntent { get; set; }
+
         public List<LUISIntent> Intents { get; set; }
 
         public List<LUISEntity> Entities { get; set; }
