@@ -77,7 +77,8 @@ namespace STU.Bot.Dialogs
                 }
                 Course courseInfo = _courseInfoService.RetrieveCourseInfo(normalizedCourseId).Data;
 
-                await context.PostAsync(string.Format("{0} - {1} \n\n {2} \n\n Atar : {3}", courseInfo.CourseTitle, courseInfo.CourseID, courseInfo.Brief, courseInfo.RequiredATAR));
+                await context.PostAsync(string.Format("{0} - {1} - {2} ATAR \n\n {3} \n\n For more information : {4}", courseInfo.CourseTitle
+                    , courseInfo.CourseID, courseInfo.RequiredATAR, courseInfo.Brief, courseInfo.CourseLink));
                 return;
             }
             catch

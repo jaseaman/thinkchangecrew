@@ -15,7 +15,7 @@ namespace STU.Shared.Services
 
         public Result<Course> RetrieveCourseInfo(string courseId)
         {
-            return new Result<Course> { Success = true, Data = Repository.All(c => c.CourseID == courseId).FirstOrDefault() };
+            return new Result<Course> { Success = true, Data = Repository.All(c => c.CourseID.Equals(courseId)).FirstOrDefault() };
         }
     }
 }
