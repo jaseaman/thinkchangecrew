@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace STU.Shared.Model
 {
-    public class Announcement : BaseModel
+    public class Booking : BaseModel
     {
         public DateTime DateAndTime { get; set; }
-        public string Content { get; set; }
     }
 }
