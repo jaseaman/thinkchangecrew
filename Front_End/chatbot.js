@@ -2,7 +2,7 @@
 $(function () {
     const testing = false;
 
-    const url = "https://prodbm-dot-deeppixel-corebot.appspot.com";
+    //const url = "https://prodbm-dot-deeppixel-corebot.appspot.com";
     //const url = "";
     const serversecret = "XIV97UQ8HCFP718X";
     const sessionkey = generateSessionKey();
@@ -216,14 +216,14 @@ $(function () {
 
 
     /*toggle animations*/
-    $("#chat-circle").click(function () {
-        $("#chat-circle").hide('scale');
+    $(".chat-circle").click(function () {
+        $(".chat-circle").hide('scale');
         $(".chat-box").show('scale');
         $(".chat-box-welcome__header").show('scale');
     })
 
     $(".chat-box-toggle").click(function () {
-        $("#chat-circle").show('scale');
+        $(".chat-circle").show('scale');
         $(".chat-box").hide('scale');
         $(".chat-box-welcome__header").hide('scale');
         $("#chat-box__wraper").hide('scale');

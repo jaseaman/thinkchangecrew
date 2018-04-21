@@ -28,8 +28,6 @@ body {
 }
 
 
-/*powered by deeppixel*/
-
 .chat-box__sign {
     font-size: 9px;
     line-height: 20px;
@@ -55,30 +53,26 @@ body {
 
 /*color to change*/
 
-#chat-circle,
+.chat-circle,
 .chat-box-welcome__header,
 .chat-box-header,
 .chat-msg.bot>.msg-avatar {
 
-    background-image: linear-gradient( to bottom right, rgba(0, 0, 150, 1), rgba(0, 0, 0, 1));
+    background-color: rgba(50, 36, 238);
 }
 
 
 /* ---------- chat-bot-button to open chat---------- */
 
-#chat-circle {
+.chat-circle {
     position: fixed;
     bottom: 50px;
-    right: 50px;
+    right: 20px;
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    padding: 23px;
+    padding: 15px;
     cursor: pointer;
-
-}
- #chat-circle .material-icons {
-    font-size: 36px;
 
 }
 
@@ -108,8 +102,6 @@ body {
     max-width: 85vw;
     max-height: 100vh;
     border-radius: 3px;
-    /*   box-shadow: 0px 5px 35px 9px #464a92; */
-    box-shadow: 0px 5px 35px 9px #ccc;
 }
 
 .chat-box-welcome__body {
@@ -187,8 +179,7 @@ body {
     max-width: 85vw;
     max-height: 100vh;
     border-radius: 3px;
-    /*   box-shadow: 0px 5px 35px 9px #464a92; */
-    box-shadow: 0px 5px 35px 9px #ccc;
+
 }
 
 .chat-box-toggle {
@@ -279,7 +270,7 @@ body {
     box-shadow: none;
     border: none;
     border-radius: 50%;
-    color: rgba(250, 65, 95, 0.99);
+    color: rgba(128, 128, 128, 0.99);
     width: 35px;
     height: 35px;
 }
