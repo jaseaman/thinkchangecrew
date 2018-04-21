@@ -1,5 +1,6 @@
 ﻿using MongoDB.Driver;
 using STU.Common.Repository;
+using STU.Shared.Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +9,7 @@ using System.Web;
 
 namespace STU.Bot.Repository
 {
-    public class MongoDbRepository<T> : IRepository<T>
+    public class MongoDbRepository<T> : IRepository<T> where T : BaseModel
     { 
         protected IMongoCollection<T> _entries;
 
@@ -39,32 +40,32 @@ namespace STU.Bot.Repository
 
         public T GetById(object id)
         {
-            throw new NotImplementedException();
+            return _entries.Find(Builders<T>.Filter.Eq("Id", id)).FirstOrDefault();
         }
 
-        public Task<T> GetByIdAsync(object id)
+        public async Task<T> GetByIdAsync(object id)
         {
-            throw new NotImplementedException();
+            return await (await _entries.FindAsync(Builders<T>.Filter.Eq("Id", id))).FirstOrDefaultAsync();
         }
 
         public void Remove(object id)
         {
-            throw new NotImplementedException();
+            _entries.FindOneAndDelete(Builders<T>.Filter.Eq("Id", id));
         }
 
-        public Task RemoveAsync(object id)
+        public async Task RemoveAsync(object id)
         {
-            throw new NotImplementedException();
+            await _entries.FindOneAndDeleteAsync(Builders<T>.Filter.Eq("Id", id));
         }
 
         public void Update(object id, T obj)
         {
-            throw new NotImplementedException();
+            _entries.FindOneAndReplace(Builders<T>.Filter.Eq("Id", id), obj);
         }
 
-        public Task UpdateAsync(object id, T obj)
+        public async Task UpdateAsync(object id, T obj)
         {
-            throw new NotImplementedException();
+            await _entries.FindOneAndReplaceAsync(Builders<T>.Filter.Eq("Id", id), obj);
         }
     }
 }

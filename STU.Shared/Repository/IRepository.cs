@@ -1,4 +1,5 @@
-﻿using System;
+﻿using STU.Shared.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace STU.Common.Repository
 {
-    public interface IRepository<T>
+    public interface IRepository<T> where T : BaseModel
     {
         T GetById(object id);
         Task<T> GetByIdAsync(object id);
