@@ -9,7 +9,7 @@ using System.Web;
 namespace STU.Bot.Dialogs
 {
     [Serializable]
-    public class UserInputDialog : IDialog<object>
+    public class LUISResponseDialog : LuisDialog<object>
     {
         public Task StartAsync(IDialogContext context)
         {

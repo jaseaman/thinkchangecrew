@@ -7,6 +7,7 @@ using Microsoft.Bot.Connector;
 
 namespace STU.Bot
 {
+    [BotAuthentication]
     public class MessagesController : ApiController
     {
         /// <summary>
@@ -17,7 +18,7 @@ namespace STU.Bot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.UserInputDialog());
+                await Conversation.SendAsync(activity, () => new Dialogs.LUISResponseDialog());
             }
 
             var response = Request.CreateResponse(HttpStatusCode.OK);
