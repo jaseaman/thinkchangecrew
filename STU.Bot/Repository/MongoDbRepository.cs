@@ -1,4 +1,5 @@
-﻿using STU.Common.Repository;
+﻿using MongoDB.Driver;
+using STU.Common.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,25 +9,32 @@ using System.Web;
 namespace STU.Bot.Repository
 {
     public class MongoDbRepository<T> : IRepository<T>
-    {
+    { 
+        protected IMongoCollection<T> _entries;
+
+        public MongoDbRepository(MongoClient client, string databaseName)
+        {
+            _entries = client.GetDatabase(databaseName).GetCollection<T>(nameof(T));
+        }
+
         public void Add(T obj)
         {
-            throw new NotImplementedException();
+            _entries.InsertOne(obj, null);
         }
 
-        public Task AddAsync(T obj)
+        public async Task AddAsync(T obj)
         {
-            throw new NotImplementedException();
+            await _entries.InsertOneAsync(obj);
         }
 
-        public T All(Func<T, bool> expression)
+        public IQueryable<T> All(Func<T, bool> expression)
         {
-            throw new NotImplementedException();
+            return _entries.AsQueryable().Where(expression).AsQueryable();
         }
 
-        public Task<T> AllAsync(Func<T, bool> expression)
+        public async Task<IQueryable<T>> AllAsync(Func<T, bool> expression)
         {
-            throw new NotImplementedException();
+            return await Task.Run(() =>_entries.AsQueryable().Where(expression).AsQueryable());
         }
 
         public T GetById(object id)
