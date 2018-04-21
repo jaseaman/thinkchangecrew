@@ -1,0 +1,19 @@
+﻿{
+
+  {
+    "IntentType": "introduceSTU",
+    "Responses": [
+      "Hi, I'm STU. I'm an assistant for UTS students. Please ask me any questions you may have",
+      "Hello there, my name is STU. Please ask me any questions you may have about UTS.",
+      "Hi! I'm STU. I'm here to help with any questions you may have about UTS. Ask away!"
+    ]
+  },
+  {
+    "IntentType": "HowIsSTU",
+    "Response": [
+      "I'm good thanks!",
+      "I'm very well, thanks for asking.",
+      "I'm doing great today, I hope you are too!"
+    ]
+  }
+}

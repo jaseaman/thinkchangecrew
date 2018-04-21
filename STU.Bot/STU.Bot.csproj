@@ -156,6 +156,8 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="bot-key.json" />
+    <Content Include="Database\LocationDBData.json" />
+    <Content Include="Database\STUReponseDBData.json" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
