@@ -10,6 +10,6 @@ namespace STU.LUIS
 {
     public interface ILanguageProccessingService
     {
-        Result<QueryResult> ProcessQuery(string query);
+        Task<Result<QueryResult>> ProcessQueryAsync(string query);
     }
 }
