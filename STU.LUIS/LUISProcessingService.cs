@@ -1,0 +1,37 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Text;
+using System.Threading.Tasks;
+using System.Web;
+using RestSharp;
+using STU.Common.Result;
+using STU.Shared.Model;
+
+namespace STU.LUIS
+{
+    public class LUISProcessingService : ILanguageProccessingService
+    {
+        public static string LUISEndpoint = "https://australiaeast.api.cognitive.microsoft.com";
+        public static string ApiPath = "/luis/v2.0/apps/";
+        public static string LuisAppId = "cbb68bc7-90d7-4ba6-ac4b-1f4cf52ade98";
+
+
+        public async Task<Result<QueryResult>> ProcessQueryAsync(string query)
+        {
+            RestClient client = new RestClient(LUISEndpoint);
+            RestRequest request = new RestRequest(ApiPath + LuisAppId, Method.GET);
+
+            string subscriptionKey = "db29cb1cb95d42368132ecedf59111a3";
+
+            request.AddQueryParameter("subscription-key", subscriptionKey);
+            request.AddQueryParameter("q", query);
+
+            IRestResponse<QueryResult> result = client.Execute<QueryResult>(request);
+
+            return new Result<QueryResult> { };
+        }
+    }
+}
