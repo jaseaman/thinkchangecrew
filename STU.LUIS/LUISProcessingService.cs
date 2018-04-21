@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Web;
 using RestSharp;
 using STU.Common.Result;
+using STU.LUIS.Model;
 using STU.Shared.Model;
 
 namespace STU.LUIS
@@ -29,7 +30,7 @@ namespace STU.LUIS
             request.AddQueryParameter("subscription-key", subscriptionKey);
             request.AddQueryParameter("q", query);
 
-            IRestResponse<QueryResult> result = client.Execute<QueryResult>(request);
+            IRestResponse<LUISQueryResult> result = client.Execute<LUISQueryResult>(request);
 
             return new Result<QueryResult> { };
         }

@@ -53,6 +53,9 @@
   <ItemGroup>
     <Compile Include="ILanguageProccessingService.cs" />
     <Compile Include="LUISProcessingService.cs" />
+    <Compile Include="Model\LUISEntity.cs" />
+    <Compile Include="Model\LUISIntent.cs" />
+    <Compile Include="Model\LUISQueryResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace STU.Shared.Model
 {
     public class Entity
     {
+        [JsonProperty(PropertyName = "Entity")]
         public String Name { get; set; }
         public String Type { get; set; }
         public double Score { get; set; }
