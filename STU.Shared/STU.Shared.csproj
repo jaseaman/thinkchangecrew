@@ -51,6 +51,8 @@
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Result\Result.cs" />
+    <Compile Include="Services\IBookingService.cs" />
+    <Compile Include="Services\ILanguageProcessingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

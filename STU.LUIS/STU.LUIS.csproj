@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ILanguageProccessingService.cs" />
     <Compile Include="LUISProcessingService.cs" />
     <Compile Include="Model\LUISEntity.cs" />
     <Compile Include="Model\LUISIntent.cs" />
