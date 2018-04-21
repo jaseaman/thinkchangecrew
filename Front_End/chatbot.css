@@ -62,7 +62,12 @@ body {
     background-color: rgba(50, 36, 238);
 }
 
-
+@keyframes pulse {
+    0% {width: 80px; height: 30px;}
+    30% {width: 80px; height: 30px;}
+    50% {width: 100px; height: 40px;}
+    80% {width: 80px; height: 30px;}
+}
 
 
 .chat-circle {
@@ -70,10 +75,11 @@ body {
     bottom: 50px;
     right: 22px;
     width: 80px;
-    height: 80px;
-    border-radius: 50%;
+    height: 30px;
     cursor: pointer;
-
+    -webkit-animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
 }
 
 #chat-overlay {
@@ -129,13 +135,11 @@ body {
 }
 
 #chat-box-welcome__ava {
-    border-radius: 50%;
     position: absolute;
     top: 98px;
     left: 124px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 120px;
+    height: 70px;
     color: white;
     padding: 15px;
 }
@@ -288,8 +292,7 @@ body {
 }
 
 .msg-avatar {
-    width: 45px;
-    height: 45px;
+    width: 20%;
     border-radius: 50%;
     float: left;
     color: #fff;
