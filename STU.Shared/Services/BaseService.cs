@@ -10,6 +10,11 @@ namespace STU.Shared.Services
 {
     public abstract class BaseService<T> where T : BaseModel
     {
+        public BaseService(IRepository<T> repository)
+        {
+            Repository = repository;
+        }
+
         public IRepository<T> Repository { get; set; }
     }
 }

@@ -2,6 +2,10 @@
 using Microsoft.Bot.Builder.Luis;
 using Microsoft.Bot.Builder.Luis.Models;
 using Microsoft.Bot.Connector;
+using MongoDB.Driver;
+using STU.Bot.Model;
+using STU.Bot.Repository;
+using STU.Shared.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +17,9 @@ namespace STU.Bot.Dialogs
     [Serializable]
     public class LUISResponseDialog : LuisDialog<object>
     {
-
+        //Need to abstract this out of the Dialog
+        protected static string MongoString = "mongodb://utsstu:dKgwyxIXeCT3rB3igdrgqIFDFm75FqOfua8NhhxSopj8oWEhUIjFn4cPhOCljdFC6RfN8zjTkOrBhItBGHTqrQ==@utsstu.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
+        protected static IResponseService _responseService = new ResponseService(new MongoDbRepository<STUResponse>(new MongoClient(MongoString), "UTS"));
 
         public Task StartAsync(IDialogContext context)
         {
@@ -23,21 +29,11 @@ namespace STU.Bot.Dialogs
         }
 
         [LuisIntent("HowIsSTU")]
-        public async Task HowIsSTU(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
-        {
-
-        }
-
         [LuisIntent("Help")]
-        public async Task Help(IDialogContext context, LuisResult result)
-        {
-        }
-
-
         [LuisIntent("IntroduceStu")]
-        public async Task IntroduceSTU(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
+        public async Task StringResponse(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
-
+            _responseService.GetRandomResponse(result.TopScoringIntent.Intent);
         }
 
         [LuisIntent("Location")]
@@ -46,10 +42,11 @@ namespace STU.Bot.Dialogs
 
         }
 
+        [LuisIntent("")]
         [LuisIntent("None")]
         public async Task ProvideApologies(IDialogContext context, LuisResult result)
         {
-
+            _responseService.GetRandomResponse(result.TopScoringIntent.Intent);
         }
 
         public async Task UserQueryRecievedAsync(IDialogContext context, IAwaitable<object> result)
