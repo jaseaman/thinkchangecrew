@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+        <title>Home | University of Technology Sydney</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/4.0.2/bootstrap-material-design.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="chatbot.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="chatbot.js"></script>
+</head>
+
+<body style="margin: 0; padding: 0">
+        <img src="./UTS_Home.png" style="width: 100%">
+
+        <div id="body">
+                <!--button test-->
+                <div>
+                        <div id="chat-overlay"></div>
+                        <img class="chat-circle" src="STU.png">
+
+                </div>
+
+                <!--chat-bot-->
+                <div class="chat-box">
+                        <div class="chat-box-body">
+                                <!--welcome message-->
+                                <div class="chat-box-welcome__header">
+                                        <div class="chat-box__header-text">
+                                                <p3 class="chat-box-welcome__bot-name">STU</p3>
+                                                <span class="chat-box-toggle">
+                                                        <i class="material-icons">cancel</i>
+                                                </span>
+                                        </div>
+
+                                        <div>
+                                                <img id="chat-box-welcome__ava" src="STU.png"></img>
+                                        </div>
+                                        <div class="chat-box-welcome__welcome-text">
+                                                <p>I'm STU. Welcome to UTS! Please ask me question.</p>
+                                        </div>
+
+                                </div>
+
+                                <!--chat-bot after welcome was toggled-->
+                                <div id="chat-box__wraper">
+                                        <div class="chat-box-header">
+                                                STU
+                                                <span class="chat-box-toggle">
+                                                        <i class="material-icons">cancel</i>
+                                                </span>
+                                        </div>
+
+                                        <div class="chat-box-overlay">
+                                        </div>
+                                        <div class="chat-logs">
+                                                <div>
+                                                        <span>
+                                                                <img class="msg-avatar" src="STU.jpg" />
+                                                        </span>
+                                                        <div class="chat-bot">
+                                                                Hi! I'm STU. How can I help you today?
+                                                        </div>
+
+                                                </div>
+
+                                        </div>
+                                        <!--chat-log-->
+                                </div>
+
+                        </div>
+                        <div class="chat-input-box">
+                                <form class="chat-input__form">
+                                        <input type="text" class="chat-input__text" id="chat-input__text" placeholder="Looking for something...?" />
+                                </form>
+                                <br>
+
+                        </div>
+                </div>
+        </div>
+
+
+
+</body>
+
+</html>
