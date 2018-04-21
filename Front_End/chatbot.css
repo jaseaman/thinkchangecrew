@@ -313,9 +313,6 @@ body {
     margin-bottom: 20px;
     border-radius: 3px;
     clear: right;
-    max-width: 330px;
-    max-height: 370px;
-    
 }
 
 .chat-user {
@@ -330,10 +327,4 @@ body {
     margin-bottom: 20px;
     border-radius: 3px;
     clear: both;
-}
-
-.img {
-    max-width: 100%;
-    max-height: 100%;
-
 }
