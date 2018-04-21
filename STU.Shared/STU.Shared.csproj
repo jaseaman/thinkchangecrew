@@ -46,7 +46,6 @@
     <Compile Include="Model\Announcement.cs" />
     <Compile Include="Model\BasicInfo.cs" />
     <Compile Include="Model\Booking.cs" />
-    <Compile Include="Model\Course.cs" />
     <Compile Include="Model\CourseInfo.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Event.cs" />

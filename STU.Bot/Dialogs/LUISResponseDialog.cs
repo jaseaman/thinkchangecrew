@@ -77,7 +77,7 @@ namespace STU.Bot.Dialogs
                 string response = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
                 CourseInfo courseInfo = _courseInfoService.RetrieveCourseInfo(normalizedCourseId).Data;
 
-                await context.PostAsync(string.Format(response, courseInfo.Course, courseInfo.CourseId, courseInfo.Brief, courseInfo.RequiredATAR));
+                await context.PostAsync(string.Format(response, courseInfo.Course, courseInfo.CourseID, courseInfo.Brief, courseInfo.RequiredATAR));
                 return;
             }
             catch
