@@ -7,7 +7,6 @@ using Microsoft.Bot.Connector;
 
 namespace STU.Bot
 {
-    [BotAuthentication]
     public class MessagesController : ApiController
     {
         /// <summary>
