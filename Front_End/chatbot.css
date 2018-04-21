@@ -135,13 +135,11 @@ body {
 }
 
 #chat-box-welcome__ava {
-    border-radius: 50%;
     position: absolute;
     top: 98px;
     left: 124px;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+    width: 120px;
+    height: 70px;
     color: white;
     padding: 15px;
 }
