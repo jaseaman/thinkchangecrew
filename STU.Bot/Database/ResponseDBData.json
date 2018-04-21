@@ -1,0 +1,15 @@
+﻿{
+  {
+    "IntentType": "Location",
+    "Response": [ "Building {0} is located at {1}" ]
+  },
+  {
+    "IntentType": "IntroduceSTU",
+    "Response": [
+      "Hi, I'm STU. I'm an assistant for UTS students. Please ask me any questions you may have",
+      "Hello there, my name is STU. Please ask me any questions you may have about UTS.",
+      "Hi! I'm STU. I'm here to help with any questions you may have about UTS. Ask away!"
+    ]
+  }
+  }
+}
