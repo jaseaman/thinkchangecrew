@@ -1,5 +1,13 @@
 ﻿{
-  "AppName" :  "UTSSTU",
-  "AppId": "a4fe2135-a037-473e-b6d5-46d753859fcf",
-  "Password": "lojRXZJ212;]gwcmAFU04))"
+  "Bot": {
+    "AppName": "UTSSTU",
+    "AppId": "a4fe2135-a037-473e-b6d5-46d753859fcf",
+    "Password": "lojRXZJ212;]gwcmAFU04))"
+  },
+
+  "LUIS": {
+    "AppName": "UTSSTU_LUIS",
+    "Key1": "bdb0503feebf43a68bfc860d6b80b9d0",
+    "Key2": "9ab37fa1e02a47348dda0df718a2e1dd"
+  }
 }
