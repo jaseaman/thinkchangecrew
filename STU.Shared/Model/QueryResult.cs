@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace STU.Shared.Model
 {
-    class QueryResult
+    public class QueryResult
     {
-        List<Intent> intentList = new List<Intent>();
-        List<Entity> entityList = new List<Entity>();
+        public List<Intent> Intents { get; set; }
+        public List<Entity> Entities { get; set; }
     }
 }
