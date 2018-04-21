@@ -17,11 +17,15 @@ namespace STU.Shared.Services
 
         public Result<string> GetRandomResponse(string intentType, string[] injectStrings = null)
         {
-            STUResponse response = Repository.All(r => r.IntentType.Equals(intentType)).FirstOrDefault();
+            STUResponse response = Repository.All(r => r.IntentType != null).FirstOrDefault();
+            int index = 0;
+            if (response.Responses.Count > 1) index = randomGenerator.Next(response.Responses.Count);
 
-            int index = randomGenerator.Next(response.Responses.Count);
+            string responseString = response.Responses[index];
 
-            return new Result<string> { Success = true, Data = String.Format(response.Responses[index], injectStrings) };
+            if (injectStrings != null) responseString = String.Format(response.Responses[index], injectStrings);
+
+            return new Result<string> { Success = true, Data = responseString };
         }
     }
 }

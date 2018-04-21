@@ -18,7 +18,6 @@ namespace STU.Bot.Repository
         public MongoDbRepository(MongoClient client, string databaseName)
         {
             _entries = client.GetDatabase(databaseName).GetCollection<T>(typeof(T).Name);
-            
         }
 
         public void Add(T obj)

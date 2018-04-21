@@ -52,12 +52,16 @@
     <Compile Include="Model\Intent.cs" />
     <Compile Include="Model\Location.cs" />
     <Compile Include="Model\QueryResult.cs" />
+    <Compile Include="Model\STUResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Result\Result.cs" />
+    <Compile Include="Services\BaseService.cs" />
     <Compile Include="Services\IBookingService.cs" />
     <Compile Include="Services\ILanguageProcessingService.cs" />
+    <Compile Include="Services\IResponseService.cs" />
+    <Compile Include="Services\ResponseService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
