@@ -288,8 +288,7 @@ body {
 }
 
 .msg-avatar {
-    width: 45px;
-    height: 45px;
+    width: 20%;
     border-radius: 50%;
     float: left;
     color: #fff;

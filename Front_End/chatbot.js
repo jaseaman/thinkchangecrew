@@ -52,7 +52,7 @@ $(function () {
                 var prevState = $(".chat-logs").html();
                 var placeholder = "Oi, I'm a placeholder";
 
-                $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU icon.png\"/><div class=\"chat-bot\">" + placeholder + "</div></div>");
+                $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU.jpg\"/><div class=\"chat-bot\">" + placeholder + "</div></div>");
             }, 750);
            
 
