@@ -8,7 +8,7 @@ using System.Web;
 namespace STU.Bot.Dialogs
 {
     [Serializable]
-    public class ResponseDialog : IDialog<object>
+    public class UserInputDialog : IDialog<object>
     {
         public Task StartAsync(IDialogContext context)
         {
@@ -17,7 +17,7 @@ namespace STU.Bot.Dialogs
 
         public async Task UserQueryRecievedAsync(IDialogContext context, IAwaitable<object> result)
         {
-
+            //ILanguageProcessingService 
         }
     }
 }

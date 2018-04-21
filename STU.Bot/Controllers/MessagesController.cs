@@ -18,7 +18,7 @@ namespace STU.Bot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.ResponseDialog());
+                await Conversation.SendAsync(activity, () => new Dialogs.UserInputDialog());
             }
             else
             {
