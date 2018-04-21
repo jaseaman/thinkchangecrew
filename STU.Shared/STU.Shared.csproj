@@ -47,6 +47,7 @@
     <Compile Include="Model\BasicInfo.cs" />
     <Compile Include="Model\Booking.cs" />
     <Compile Include="Model\Course.cs" />
+    <Compile Include="Model\CourseInfo.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\Event.cs" />
     <Compile Include="Model\Intent.cs" />
@@ -58,7 +59,9 @@
     <Compile Include="Model\BaseModel.cs" />
     <Compile Include="Result\Result.cs" />
     <Compile Include="Services\BaseService.cs" />
+    <Compile Include="Services\CourseInfoService.cs" />
     <Compile Include="Services\IBookingService.cs" />
+    <Compile Include="Services\ICourseInfoService.cs" />
     <Compile Include="Services\ILanguageProcessingService.cs" />
     <Compile Include="Services\ILocationService.cs" />
     <Compile Include="Services\IResponseService.cs" />

@@ -62,6 +62,12 @@ namespace STU.Bot.Dialogs
             }
         }
 
+        [LuisIntent("CourseInfo")]
+        public async Task ProvideSubjectInfo(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
+        {
+
+        }
+
         [LuisIntent("None"), LuisIntent("")]
         public async Task ProvideApologies(IDialogContext context, LuisResult result)
         {
