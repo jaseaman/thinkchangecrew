@@ -15,7 +15,8 @@ namespace STU.Bot.Repository
 
         public MongoDbRepository(MongoClient client, string databaseName)
         {
-            _entries = client.GetDatabase(databaseName).GetCollection<T>(nameof(T));
+            _entries = client.GetDatabase(databaseName).GetCollection<T>("STUResponse");
+            
         }
 
         public void Add(T obj)

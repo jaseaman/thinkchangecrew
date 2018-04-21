@@ -8,6 +8,7 @@ namespace STU.Bot.Model
 {
     public class STUResponse : BaseModel
     {
-        List<string> Responses { get; set; }
+        public string IntentType { get; set; }
+        public List<string> Responses { get; set; }
     }
 }
