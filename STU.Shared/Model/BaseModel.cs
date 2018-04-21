@@ -8,6 +8,6 @@ namespace STU.Shared.Model
 {
     public abstract class BaseModel
     {
-        public object Id { get; set; }
+        public object id { get; set; } = Guid.NewGuid();
     }
 }

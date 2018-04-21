@@ -1,4 +1,6 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
+using MongoDB.Driver;
 using STU.Shared.Model;
 using STU.Shared.Repository;
 using System;
@@ -15,7 +17,7 @@ namespace STU.Bot.Repository
 
         public MongoDbRepository(MongoClient client, string databaseName)
         {
-            _entries = client.GetDatabase(databaseName).GetCollection<T>("STUResponse");
+            _entries = client.GetDatabase(databaseName).GetCollection<T>(typeof(T).Name);
             
         }
 
@@ -41,32 +43,32 @@ namespace STU.Bot.Repository
 
         public T GetById(object id)
         {
-            return _entries.Find(Builders<T>.Filter.Eq("Id", id)).FirstOrDefault();
+            return _entries.Find(Builders<T>.Filter.Eq("_id", id)).FirstOrDefault();
         }
 
         public async Task<T> GetByIdAsync(object id)
         {
-            return await (await _entries.FindAsync(Builders<T>.Filter.Eq("Id", id))).FirstOrDefaultAsync();
+            return await (await _entries.FindAsync(Builders<T>.Filter.Eq("_id", id))).FirstOrDefaultAsync();
         }
 
         public void Remove(object id)
         {
-            _entries.FindOneAndDelete(Builders<T>.Filter.Eq("Id", id));
+            _entries.FindOneAndDelete(Builders<T>.Filter.Eq("_id", id));
         }
 
         public async Task RemoveAsync(object id)
         {
-            await _entries.FindOneAndDeleteAsync(Builders<T>.Filter.Eq("Id", id));
+            await _entries.FindOneAndDeleteAsync(Builders<T>.Filter.Eq("_id", id));
         }
 
         public void Update(object id, T obj)
         {
-            _entries.FindOneAndReplace(Builders<T>.Filter.Eq("Id", id), obj);
+            _entries.FindOneAndReplace(Builders<T>.Filter.Eq("_id", id), obj);
         }
 
         public async Task UpdateAsync(object id, T obj)
         {
-            await _entries.FindOneAndReplaceAsync(Builders<T>.Filter.Eq("Id", id), obj);
+            await _entries.FindOneAndReplaceAsync(Builders<T>.Filter.Eq("_id", id), obj);
         }
     }
 }

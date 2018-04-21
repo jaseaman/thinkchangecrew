@@ -1,6 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using MongoDB.Driver;
 using STU.Bot.Model;
 using STU.Bot.Repository;
@@ -17,18 +20,11 @@ namespace STU.Bot.Tests
         [TestMethod]
         public void TestGet()
         {
-            var client = new MongoClient(MongoDbConnectionString);
-
-            IMongoCollection<STUResponse> coll = client.GetDatabase("STU").GetCollection<STUResponse>("STUResponse");
-
-            
-            coll.Find(p => p!= null);
-
+            var client = new MongoClient(MongoDbConnectionString);         
 
 
             IRepository<STUResponse> repo = new MongoDbRepository<STUResponse>(client, DatabaseName);
-
-            repo.All(p => p.IntentType == "introducesSTU").ToList();
+            List<STUResponse> resp = repo.All(p => p.IntentType == "HowIsSTU").ToList();
         }
     }
 }
