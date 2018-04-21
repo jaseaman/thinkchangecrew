@@ -20,18 +20,9 @@ namespace STU.Bot
             {
                 await Conversation.SendAsync(activity, () => new Dialogs.UserInputDialog());
             }
-            else
-            {
-                HandleSystemMessage(activity);
-            }
+
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
-        }
-
-        private Activity HandleSystemMessage(Activity message)
-        {
-
-            return null;
         }
     }
 }
