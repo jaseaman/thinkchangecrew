@@ -65,7 +65,7 @@ namespace STU.Bot.Dialogs
         [LuisIntent("None"), LuisIntent("")]
         public async Task ProvideApologies(IDialogContext context, LuisResult result)
         {
-            await context.PostAsync(string.Format("I'm sorry, I could not process : '{0}'", result.Query));
+            await context.PostAsync(string.Format("I'm sorry, I could not process : '{0}', could you please be a little more specific", result.Query));
         }
     }
 }
