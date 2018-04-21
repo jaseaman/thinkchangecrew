@@ -13,9 +13,9 @@ namespace STU.Shared.Services
     {
         public LocationService(IRepository<Location> locationRepository) : base(locationRepository) { }
 
-        public Result<Location> GetDirections(string buildingId)
+        public Result<Location> GetDirections(int buildingId)
         {
-            return new Result<Location> { Success = true, Data = Repository.All(loc => loc.LocationId == buildingId).FirstOrDefault() };
+            return new Result<Location> { Success = true, Data = Repository.All(loc => loc.BuildingID == buildingId).FirstOrDefault() };
         }
     }
 }

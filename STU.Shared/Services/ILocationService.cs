@@ -10,6 +10,6 @@ namespace STU.Shared.Services
 {
     public interface ILocationService
     {
-        Result<Location> GetDirections(string buildingId);
+        Result<Location> GetDirections(int buildingId);
     }
 }

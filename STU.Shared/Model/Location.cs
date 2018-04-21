@@ -9,7 +9,8 @@ namespace STU.Shared.Model
     public class Location : BaseModel
     {
         public string Name { get; set; }
-        public string LocationId { get; set; }
+        public int BuildingID { get; set; }
+        public string LocationID { get; set; }
 
         public string LocationLink { get; set; }
         public string Latitude { get; set; }

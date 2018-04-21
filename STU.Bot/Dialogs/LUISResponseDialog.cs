@@ -53,15 +53,16 @@ namespace STU.Bot.Dialogs
         {
             try
             {
-                string normalizedId = (result.Entities[0].Resolution.Values.ToList()[0]).ToString();
-                if (string.IsNullOrEmpty(normalizedId))
+    
+                int normalizedId = int.Parse((string)((List<object>)result.Entities[0].Resolution["values"])[0]);
+                if (normalizedId == 0)
                 {
                     await context.PostAsync("I'm sorry, I was unable to find directions to your destination");
                     return;
                 }
                 Location location = _locationService.GetDirections(normalizedId).Data;
 
-                await context.PostAsync(location.LocationId + "\n\n" + location.LocationLink);
+                await context.PostAsync(location.LocationID + "\n\n" + location.LocationLink);
                 return;
             }
             catch
@@ -74,8 +75,7 @@ namespace STU.Bot.Dialogs
         [LuisIntent("None")]
         public async Task ProvideApologies(IDialogContext context, LuisResult result)
         {
-            string message = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
-            await context.PostAsync(message);
+            await context.PostAsync(string.Format("I'm sorry, I could not process : '{0}'", result.Query));
         }
     }
 }
