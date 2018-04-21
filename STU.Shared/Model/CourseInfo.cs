@@ -10,6 +10,7 @@ namespace STU.Shared.Model
     {
         public string CourseId { get; set; }
         public string Course { get; set; }
+        public string Brief { get; set; }
         public float RequiredATAR { get; set; }
     }
 }

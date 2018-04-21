@@ -1,4 +1,5 @@
-﻿using STU.Shared.Model;
+﻿using STU.Common.Result;
+using STU.Shared.Model;
 using STU.Shared.Repository;
 using System;
 using System.Collections.Generic;
@@ -11,5 +12,10 @@ namespace STU.Shared.Services
     public class CourseInfoService : BaseService<CourseInfo>, ICourseInfoService
     {
         public CourseInfoService(IRepository<CourseInfo> courseRepository) : base(courseRepository) { }
+
+        public Result<CourseInfo> RetrieveCourseInfo(string courseId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

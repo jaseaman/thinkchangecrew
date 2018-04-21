@@ -1,4 +1,6 @@
-﻿using System;
+﻿using STU.Common.Result;
+using STU.Shared.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,6 @@ namespace STU.Shared.Services
 {
     public interface ICourseInfoService
     {
+        Result<CourseInfo> RetrieveCourseInfo(string courseId);
     }
 }
