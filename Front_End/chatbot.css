@@ -62,7 +62,12 @@ body {
     background-color: rgba(50, 36, 238);
 }
 
-
+@keyframes pulse {
+    0% {width: 80px; height: 30px;}
+    30% {width: 80px; height: 30px;}
+    50% {width: 100px; height: 40px;}
+    80% {width: 80px; height: 30px;}
+}
 
 
 .chat-circle {
@@ -72,7 +77,9 @@ body {
     width: 80px;
     height: 30px;
     cursor: pointer;
-
+    -webkit-animation-name: pulse;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
 }
 
 #chat-overlay {
