@@ -22,6 +22,7 @@ namespace STU.Bot.Dialogs
         protected static string MongoString = "mongodb://utsstu:dKgwyxIXeCT3rB3igdrgqIFDFm75FqOfua8NhhxSopj8oWEhUIjFn4cPhOCljdFC6RfN8zjTkOrBhItBGHTqrQ==@utsstu.documents.azure.com:10255/?ssl=true&replicaSet=globaldb";
         protected static IResponseService _responseService = new ResponseService(new MongoDbRepository<STUResponse>(new MongoClient(MongoString), "STU"));
 
+        
         //public Task StartAsync(IDialogContext context)
         //{
         //    context.Wait(UserQueryRecievedAsync);
@@ -37,32 +38,25 @@ namespace STU.Bot.Dialogs
 
         [LuisIntent("HowIsSTU")]
         [LuisIntent("Help")]
-        [LuisIntent("IntroduceStu")]
+        [LuisIntent("IntroduceSTU")]
         public async Task StringResponse(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
-            _responseService.GetRandomResponse(result.TopScoringIntent.Intent);
+            string message = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
+            await context.PostAsync(message);
         }
 
         [LuisIntent("Location")]
         public async Task ProvideLocation(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
-
+            string responseMessage = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
         }
 
         [LuisIntent("")]
         [LuisIntent("None")]
         public async Task ProvideApologies(IDialogContext context, LuisResult result)
         {
-            _responseService.GetRandomResponse(result.TopScoringIntent.Intent);
-        }
-
-        public async Task UserQueryRecievedAsync(IDialogContext context, IAwaitable<object> result)
-        {
-            Activity activty = await result as Activity;
-
-            //ILanguageProcessingService 
-
-            await context.PostAsync("Hello world");
+            string message = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
+            await context.PostAsync(message);
         }
     }
 }

@@ -17,7 +17,7 @@ namespace STU.Shared.Services
 
         public Result<string> GetRandomResponse(string intentType, string[] injectStrings = null)
         {
-            STUResponse response = Repository.All(r => r.IntentType != null).FirstOrDefault();
+            STUResponse response = Repository.All(r => r.IntentType == intentType).FirstOrDefault();
             int index = 0;
             if (response.Responses.Count > 1) index = randomGenerator.Next(response.Responses.Count);
 
