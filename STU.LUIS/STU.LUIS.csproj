@@ -4,12 +4,12 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{1C63B04B-CFF8-4488-B9D9-B53436074394}</ProjectGuid>
+    <ProjectGuid>{68D8EED8-DC6D-4472-BEEC-1063D35AF6F4}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>STU.Shared</RootNamespace>
-    <AssemblyName>STU.Shared</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <RootNamespace>STU.LUIS</RootNamespace>
+    <AssemblyName>STU.LUIS</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -40,12 +40,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\BaseModel.cs" />
-    <Compile Include="Model\Entity.cs" />
-    <Compile Include="Model\Intent.cs" />
+    <Compile Include="Class1.cs" />
+    <Compile Include="ILanguageProccessingService.cs" />
+    <Compile Include="LUISService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repository\IRepository.cs" />
-    <Compile Include="Result\Result.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\STU.Shared\STU.Shared.csproj">
+      <Project>{1c63b04b-cff8-4488-b9d9-b53436074394}</Project>
+      <Name>STU.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
