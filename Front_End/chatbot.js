@@ -7,7 +7,9 @@ $(function () {
      
      /*Animations from click events*/
  
-     
+     var directLine = new DirectLine.DirectLine({
+        secret: 'PIV3Z3IYErI.cwA.tp0.IT1K4ZhBN2UQjMrUVGHj9qcLxHfOkaqxnoIEYCgVq8I' });
+
  
      $(".chat-circle").click(function () {
          $(".chat-circle").hide('scale');
@@ -26,10 +28,21 @@ $(function () {
          $(".chat-box-welcome__header").hide();
          $("#chat-box__wraper").show();
      })
- 
+
+     directLine.activity$
+     .filter(activity => activity.type === 'message' && activity.from.id === 'UTSSTU').subscribe(
+         message => {
+              console.log("received message ", message);
+              var prevState = $(".chat-logs").html();
+              
+              $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU.jpg\"/><div class=\"chat-bot\">" + message.text + "</div></div>");  
+
+             var d = $('.chat-logs');
+             d.scrollTop(d.prop("scrollHeight"));
+
+         }); 
      
-     $(".chat-input__text").keypress(function(event) { // Send message to the chat bot
-         //  &&  document.getElementById(".chat-input__text").value != "" use for null
+     $(".chat-input__text").keypress(function(event) { 
          if (event.which == 13) {
              
              event.preventDefault();
@@ -37,27 +50,21 @@ $(function () {
  
              var prevState =  $(".chat-logs").html();
  
-             
+             directLine.postActivity({
+                from: { id: 'userId', name: 'User' }, 
+                type: 'message',
+                text: userMessage
+            }).subscribe(
+                id => console.log("Posted activity, assigned ID ", id),
+                error => console.log("Error posting activity", error)
+            );
+
              $(".chat-logs").html(prevState + "<br>" + "<div class=\"chat-user\">" + userMessage + "</div>");
- 
-             // Send the request to server
-             // Server returns the response, and is passed into robot message
-             // Below the bot message passes in a placeholder
-             
- 
-         
-             $(".chat-input__text").val("");
- 
-             setTimeout(function() {
-                 var prevState = $(".chat-logs").html();
-                 var placeholder = "Oi, I'm a placeholder";
- 
-                 $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU.jpg\"/><div class=\"chat-bot\">" + placeholder + "</div></div>");
-             }, 750);
             
- 
- 
- 
+             $(".chat-input__text").val("");
+
+             var d = $('.chat-logs');
+             d.scrollTop(d.prop("scrollHeight"));
          } 
      }) 
  
