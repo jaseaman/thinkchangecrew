@@ -7,7 +7,9 @@ $(function () {
      
      /*Animations from click events*/
  
-     
+     var directLine = new DirectLine.DirectLine({
+        secret: 'PIV3Z3IYErI.cwA.tp0.IT1K4ZhBN2UQjMrUVGHj9qcLxHfOkaqxnoIEYCgVq8I' });
+
  
      $(".chat-circle").click(function () {
          $(".chat-circle").hide('scale');
@@ -28,8 +30,7 @@ $(function () {
      })
  
      
-     $(".chat-input__text").keypress(function(event) { // Send message to the chat bot
-         //  &&  document.getElementById(".chat-input__text").value != "" use for null
+     $(".chat-input__text").keypress(function(event) { 
          if (event.which == 13) {
              
              event.preventDefault();
