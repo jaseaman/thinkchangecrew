@@ -34,7 +34,7 @@ namespace STU.Bot.Dialogs
         { }
         
         [LuisIntent("ThanksSTU"), LuisIntent("CensusDate"), LuisIntent("Coffee"), LuisIntent("IntroduceSTU"), LuisIntent("Help"), LuisIntent("HowIsSTU"), LuisIntent("Joke"),
-            LuisIntent("Timetable"), LuisIntent("ChangeSubjects"), LuisIntent("AdditionalServices"), LuisIntent("Referencing")]
+            LuisIntent("Timetable"), LuisIntent("ChangeSubjects"), LuisIntent("AdditionalServices"), LuisIntent("Referencing"), LuisIntent("ContactPerson")]
         public async Task StringResponse(IDialogContext context, IAwaitable<IMessageActivity> activity, LuisResult result)
         {
             string message = _responseService.GetRandomResponse(result.TopScoringIntent.Intent).Data;
