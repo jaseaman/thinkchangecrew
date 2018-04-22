@@ -131,17 +131,16 @@ body {
     color: white;
     padding-left: 10px;
     font-size: 20px;
-    padding-top: 13px;
+    padding-top: 25px;
 }
 
 #chat-box-welcome__ava {
     position: absolute;
     top: 98px;
-    left: 124px;
-    width: 120px;
-    height: 70px;
+    left: 260px;
+    width: 180px;
+    height: 80px;
     color: white;
-    padding: 15px;
 }
 
 .chat-box-welcome__ava .material-icons {
@@ -153,7 +152,8 @@ body {
     text-align: center;
     width: 80%;
     position: relative;
-    top: 45%;
+    padding-top: 150px;
+    bottom: 50%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -177,12 +177,11 @@ body {
     position: fixed;
     /* right: 30px;*/
     right: 30px;
-    bottom: 50px;
+    bottom: 10px;
     width: 700px;
     height: 700px;
     max-width: 250vw;
     max-height: 220vh;
-    border-radius: 3px;
 
 }
 
