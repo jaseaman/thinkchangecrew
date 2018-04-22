@@ -177,7 +177,7 @@ body {
     position: fixed;
     /* right: 30px;*/
     right: 30px;
-    bottom: 10px;
+    bottom: 1px;
     width: 700px;
     height: 700px;
     max-width: 250vw;
