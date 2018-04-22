@@ -175,13 +175,12 @@ body {
     /*background: #efefef;*/
     background: #f8f8f8;
     position: fixed;
-    /* right: 30px;*/
     right: 30px;
-    bottom: 1px;
+    bottom: 30px;
     width: 700px;
     height: 700px;
     max-width: 250vw;
-    max-height: 220vh;
+    max-height: 100vh;
 
 }
 
@@ -205,7 +204,7 @@ body {
 
 .chat-box-body {
     position: relative;
-    height: 370px;
+    max-height: 640px;
     height: auto;
     border-bottom: 1px solid rgba(181, 181, 181, 0.42);
     overflow: hidden;
@@ -281,14 +280,14 @@ body {
 
 .chat-logs {
     padding: 15px;
-    height: 100%;
-    min-height: 580px;
+    max-height: 550px;
+    min-height: 550px;
     overflow-y: scroll;
 }
 
 @media only screen and (max-width: 500px) {
     .chat-logs {
-        height: 40vh;
+        height: 20vh;
     }
 }
 
