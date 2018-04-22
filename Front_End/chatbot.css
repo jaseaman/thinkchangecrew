@@ -121,7 +121,7 @@ body {
 }
 
 .chat-box-welcome__header {
-    height: 600px;
+    min-height: 614px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     display: none;
@@ -283,7 +283,7 @@ body {
 .chat-logs {
     padding: 15px;
     height: 100%;
-    min-height: 500px;
+    min-height: 580px;
     overflow-y: scroll;
 }
 
