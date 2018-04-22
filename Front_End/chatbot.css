@@ -121,7 +121,7 @@ body {
 }
 
 .chat-box-welcome__header {
-    min-height: 614px;
+    height: 420px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     display: none;
@@ -131,16 +131,17 @@ body {
     color: white;
     padding-left: 10px;
     font-size: 20px;
-    padding-top: 25px;
+    padding-top: 13px;
 }
 
 #chat-box-welcome__ava {
     position: absolute;
     top: 98px;
-    left: 260px;
-    width: 180px;
-    height: 80px;
+    left: 124px;
+    width: 120px;
+    height: 70px;
     color: white;
+    padding: 15px;
 }
 
 .chat-box-welcome__ava .material-icons {
@@ -152,8 +153,7 @@ body {
     text-align: center;
     width: 80%;
     position: relative;
-    padding-top: 150px;
-    bottom: 50%;
+    top: 45%;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -175,12 +175,13 @@ body {
     /*background: #efefef;*/
     background: #f8f8f8;
     position: fixed;
+    /* right: 30px;*/
     right: 30px;
-    bottom: 30px;
-    width: 700px;
-    height: 700px;
-    max-width: 250vw;
+    bottom: 50px;
+    width: 350px;
+    max-width: 85vw;
     max-height: 100vh;
+    border-radius: 3px;
 
 }
 
@@ -204,7 +205,7 @@ body {
 
 .chat-box-body {
     position: relative;
-    max-height: 640px;
+    height: 370px;
     height: auto;
     border-bottom: 1px solid rgba(181, 181, 181, 0.42);
     overflow: hidden;
@@ -280,19 +281,18 @@ body {
 
 .chat-logs {
     padding: 15px;
-    max-height: 550px;
-    min-height: 550px;
+    height: 370px;
     overflow-y: scroll;
 }
 
 @media only screen and (max-width: 500px) {
     .chat-logs {
-        height: 20vh;
+        height: 40vh;
     }
 }
 
 .msg-avatar {
-    width: 10%;
+    width: 20%;
     border-radius: 50%;
     float: left;
     color: #fff;
@@ -308,7 +308,6 @@ body {
     float: left;
     margin-left: 10px;
     position: relative;
-    word-wrap: break-word;
     margin-bottom: 20px;
     border-radius: 3px;
     clear: right;
@@ -322,7 +321,6 @@ body {
     max-width: 75%;
     float: right;
     margin-right: 10px;
-    word-wrap: break-word;
     position: relative;
     margin-bottom: 20px;
     border-radius: 3px;
