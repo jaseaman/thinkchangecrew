@@ -28,6 +28,14 @@ $(function () {
          $(".chat-box-welcome__header").hide();
          $("#chat-box__wraper").show();
      })
+
+     directLine.activity$
+     .filter(activity => activity.type === 'message' && activity.from.id === 'UTSSTU').subscribe(
+         message => {
+              console.log("received message ", message);
+              var prevState = $(".chat-logs").html();
+              $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU.jpg\"/><div class=\"chat-bot\">" + message.text + "</div></div>");  
+         });
  
      
      $(".chat-input__text").keypress(function(event) { 
@@ -38,19 +46,20 @@ $(function () {
  
              var prevState =  $(".chat-logs").html();
  
-             
+             directLine.postActivity({
+                from: { id: 'userId', name: 'User' }, 
+                type: 'message',
+                text: userMessage
+            }).subscribe(
+                id => console.log("Posted activity, assigned ID ", id),
+                error => console.log("Error posting activity", error)
+            );
+
+
              $(".chat-logs").html(prevState + "<br>" + "<div class=\"chat-user\">" + userMessage + "</div>");
             
              $(".chat-input__text").val("");
- 
-             directLine.activity$
-            .filter(activity => activity.type === 'message').subscribe(
-                message => {
-                     console.log("received message ", message);
-                     var prevState = $(".chat-logs").html();
-                     $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU.jpg\"/><div class=\"chat-bot\">" + responseMessage + "</div></div>");  
-                });
- 
+
          } 
      }) 
  
