@@ -34,9 +34,13 @@ $(function () {
          message => {
               console.log("received message ", message);
               var prevState = $(".chat-logs").html();
+              
               $(".chat-logs").html(prevState + "<br>" + "<div><img class=\"msg-avatar\" src=\"STU.jpg\"/><div class=\"chat-bot\">" + message.text + "</div></div>");  
-         });
- 
+
+             var d = $('.chat-logs');
+             d.scrollTop(d.prop("scrollHeight"));
+
+         }); 
      
      $(".chat-input__text").keypress(function(event) { 
          if (event.which == 13) {
@@ -55,11 +59,12 @@ $(function () {
                 error => console.log("Error posting activity", error)
             );
 
-
              $(".chat-logs").html(prevState + "<br>" + "<div class=\"chat-user\">" + userMessage + "</div>");
             
              $(".chat-input__text").val("");
 
+             var d = $('.chat-logs');
+             d.scrollTop(d.prop("scrollHeight"));
          } 
      }) 
  
