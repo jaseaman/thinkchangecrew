@@ -18,6 +18,7 @@ namespace STU.LUIS
         public static string LUISEndpoint = "https://australiaeast.api.cognitive.microsoft.com";
         public static string ApiPath = "/luis/v2.0/apps/";
         public static string LuisAppId = "cbb68bc7-90d7-4ba6-ac4b-1f4cf52ade98";
+        public static string BingAutocorrectKey = "eb3dc69c0370441a9533f9c708812d78";
 
 
         public async Task<Result<QueryResult>> ProcessQueryAsync(string query)
@@ -29,6 +30,8 @@ namespace STU.LUIS
 
             request.AddQueryParameter("subscription-key", subscriptionKey);
             request.AddQueryParameter("q", query);
+            request.AddQueryParameter("spellCheck", "true");
+            request.AddQueryParameter("bing-spell-check-subscription-key", BingAutocorrectKey);
 
             IRestResponse<LUISQueryResult> result = client.Execute<LUISQueryResult>(request);
 
